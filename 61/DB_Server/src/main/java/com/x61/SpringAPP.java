@@ -9,7 +9,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
-@ServletComponentScan("com.randream.filters")
+@ServletComponentScan("com.x61.filters")
 public class SpringAPP {
     public static void main(String[] args) {
         SpringApplication.run(SpringAPP.class, args);
