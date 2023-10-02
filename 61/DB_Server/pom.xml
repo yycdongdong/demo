@@ -93,7 +93,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.randream.SpringAPP</mainClass>
+                    <mainClass>com.x61.SpringAPP</mainClass>
                 </configuration>
                 <executions>
                     <execution>

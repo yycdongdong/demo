@@ -167,7 +167,7 @@
     <!-- logback为java中的包 -->
     <!--<logger name="com.dudu.controller"/>-->
     <!--logback.LogbackDemo：类的全路径 addtivity <appender-ref ref="console"/>-->
-    <logger name="com.randream.mapper" level="DEBUG">
+    <logger name="com.x61.mapper" level="DEBUG">
         <appender-ref ref="SQL_FILE"/>
     </logger>
 </configuration>

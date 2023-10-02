@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.randream.mapper.UserMapper">
+<mapper namespace="com.x61.mapper.UserMapper">
     <insert id="CreateUser" useGeneratedKeys="true" keyProperty="userId" keyColumn="user_id">
         insert into user(name, password, email, start_time)
         values (#{user.name}, #{user.password}, #{user.account}, #{user.startTime})
@@ -13,7 +13,7 @@
         insert into user(open_id, start_time)
         values (#{user.openId}, #{user.startTime})
     </insert>
-    <select id="FindByAccount" resultType="com.randream.bean.User">
+    <select id="FindByAccount" resultType="com.x61.bean.User">
         select password, user_id, state
         from user
         where phone_number = #{account}
@@ -25,7 +25,7 @@
             count=#{user.count}
         where user_id = #{user.userId}
     </update>
-    <select id="FindByUserId" resultType="com.randream.bean.User">
+    <select id="FindByUserId" resultType="com.x61.bean.User">
         select phone_number, email
         from user
         where user_id = #{userId}
