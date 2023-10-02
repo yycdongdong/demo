@@ -13,6 +13,7 @@ import org.springframework.context.annotation.Bean;
 public class SpringAPP {
     public static void main(String[] args) {
         SpringApplication.run(SpringAPP.class, args);
+        System.out.println("ToCheckout");
     }
 
     @Bean
