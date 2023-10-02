@@ -1,0 +1,53 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/db_061?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&tinyInt1isBit=false
+    username: root
+    password: randream2022
+    driver-class-name: com.mysql.jdbc.Driver
+  application:
+    name: com.randream
+  redis:
+    host: 192.168.80.131
+    port: 6379
+    database: 0 # 几号库
+    #password: 123456
+    lettuce:
+      pool:
+        max-active: 8 # 最大连接
+        max-idle: 8 # 最大空闲连接
+        min-idle: 0 # 最小空闲连接
+        max-wait: 1000ms # 连接等待时间
+      timeout: 2000
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  #目的是为了省略resultType里的代码量
+  type-aliases-package: com.bean
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    aggressive-lazy-loading: false
+    lazy-loading-enabled: true
+  #cloud:
+  #  nacos:
+  #    config:
+  #      file-extension: yaml
+  #      #group: testnacos
+  #      #namespace: A61
+  #    server-addr: 127.0.0.1:8848
+  #    discovery:
+  #      cluster-name: FJ #杭州
+server:
+  port: 8081
+  # port: 8080
+  servlet:
+    encoding:
+      force-response: true
+      # session:
+      ## 是否在重启之间保存session
+      # persistent: true
+      ## 设置session过期时间, 最小时间依据容器的不同判定 Unlike Jetty and Undertow, Tomcat only supports minute precision for session timeout. Any value that is greater than zero is converted to minutes with a minimum of 1 minute # https://github.com/spring-projects/spring-boot/issues/7383
+      # timeout: 5m
+      charset: UTF-8
+logging:
+  config: classpath:logback-spring.xml
