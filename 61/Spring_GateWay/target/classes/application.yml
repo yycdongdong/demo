@@ -1,0 +1,32 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: xuser-service
+          uri: lb://UserX
+          predicates:
+            - Path=/v1/**
+        - id: xuser-service
+          uri: lb://UserX
+          predicates:
+            - Path=/v2/**
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://127.0.0.1:5173"  # - "http://127.0.0.1:5173" - "*"
+            allowedMethods:
+              - GET
+              - HEAD
+              - POST
+              - PUT
+              - DELETE
+              - TRACE
+              - OPTIONS
+              - PATCH
+            allowedHeaders:
+              - "Authorization"
+              - "Content-Type"
+  main:
+    web-application-type: reactive
+    allow-bean-definition-overriding: true

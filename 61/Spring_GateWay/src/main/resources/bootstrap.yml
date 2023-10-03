@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: GateWayX
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        #group: testnacos
+        #namespace: A61
+      server-addr: 127.0.0.1:10086
+      discovery:
+        cluster-name: SH #杭州
+server:
+  port: 9000
