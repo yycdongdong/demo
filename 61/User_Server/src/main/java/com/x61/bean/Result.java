@@ -18,17 +18,17 @@ public class Result {
 
     public final static Result Common_OK(Object data) {
 
-        return new Result(Code.Message_Ok, Code.Code_Common_OK, data);
+        return new Result(Code.Message_Ok, Code.Code_OK, data);
     }
 
     public final static Result Common_Failure(Object data) {
 
-        return new Result(Code.Message_Failure, Code.Code_Common_Failure, data);
+        return new Result(Code.Message_Failure, Code.Code_Failure, data);
     }
 
     public final static Result Common_Error(Object data) {
 
-        return new Result(Code.Message_Error, Code.Code_Common_Error, data);
+        return new Result(Code.Message_Error, Code.Code_Error, data);
     }
 
     public final static Result OK(Long code, Object data) {
